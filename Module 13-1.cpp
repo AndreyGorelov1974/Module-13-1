@@ -41,4 +41,24 @@ int main()
 		std::cin >> elements;
 		userVector.push_back(elements);
 	}
+
+	std::cout << "Input number to delete: ";
+	int deleteValue = 0;
+	std::cin >> deleteValue;
+	for (int i = 0; i < vectorSize; ++i)
+	{
+		if (userVector[i] == deleteValue) {
+			for (int j = i; j < vectorSize - 1; ++j) {
+				std::swap(userVector[j], userVector[j + 1]);
+			}
+			userVector.pop_back();
+		}
+	}
+
+	std::cout << "Result: ";
+	for (int i = 0; i < vectorSize; ++i)
+	{
+		std::cout << userVector[i] << " ";
+	}
+
 }
