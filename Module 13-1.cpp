@@ -30,19 +30,15 @@ Result: 1 5 1
 int main()
 {
 	int vectorSize;
-	std::cout << "Enter size you vector - ";
+	std::cout << "Input vector size: ";
 	std::cin >> vectorSize;
-	std::vector<int> robotsNumber;
+	std::vector<int> userVector(vectorSize);
 
-	int robotNumber = 0;
-	while (robotNumber != -1)
+	std::cout << "Input numbers: ";
+	int elements = 0;
+	for (int i = 0; i < vectorSize; ++i)
 	{
-		std::cout << "Enter robot number - ";
-		std::cin >> robotNumber;
-		robotsNumber.push_back(robotNumber);
-		if ((robotsNumber.capacity() - robotsNumber.size()) < 2)
-		{
-			std::cout << "Size - " << robotsNumber.size() << "Capasity - " << robotsNumber.capacity() << std::endl;
-		}
+		std::cin >> elements;
+		userVector.push_back(elements);
 	}
 }
