@@ -36,27 +36,31 @@ int main()
 
 	std::cout << "Input numbers: ";
 	int elements = 0;
-	for (int i = 0; i < vectorSize; ++i)
+
+	for (int i = 0; i < userVector.size(); ++i)
 	{
 		std::cin >> elements;
-		userVector.push_back(elements);
+		userVector[i] = elements;
 	}
 
 	std::cout << "Input number to delete: ";
 	int deleteValue = 0;
 	std::cin >> deleteValue;
-	for (int i = 0; i < vectorSize; ++i)
+	for (int i = 0; i < userVector.size(); ++i)
 	{
 		if (userVector[i] == deleteValue) {
-			for (int j = i; j < vectorSize - 1; ++j) {
+			//при помощи обмена перемещаем элемент в конец вектора
+			for (int j = i; j < userVector.size() - 1; ++j) {
 				std::swap(userVector[j], userVector[j + 1]);
 			}
 			userVector.pop_back();
+			//уменьшаем счётчик цикла что бы не пропустить следующий элемент
+			--i;
 		}
 	}
 
 	std::cout << "Result: ";
-	for (int i = 0; i < vectorSize; ++i)
+	for (int i = 0; i < userVector.size(); ++i)
 	{
 		std::cout << userVector[i] << " ";
 	}
