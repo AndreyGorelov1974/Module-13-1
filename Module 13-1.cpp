@@ -8,9 +8,9 @@
 Пользователь вводит значение — X. X — удаляемое из вектора значение. Необходимо удалить из вектора все элементы, которые равны заданному значению.
 В конце программы необходимо вывести итоговое состояние вектора.
 Пример выполнения
-Input vector size: 5 
-Input numbers: 1 3 3 5 1 
-Input number to delete: 3 
+Input vector size: 5
+Input numbers: 1 3 3 5 1
+Input number to delete: 3
 Result: 1 5 1
 
 Пояснение
@@ -29,16 +29,20 @@ Result: 1 5 1
 
 int main()
 {
-    std::vector<int> robotsNumber;
-    int robotNumber = 0;
-    while (robotNumber != -1)
-    {
-        std::cout << "Enter robot number - ";
-        std::cin >> robotNumber;
-        robotsNumber.push_back(robotNumber);
-        if ((robotsNumber.capacity() - robotsNumber.size()) < 2)
-        {
-            std::cout << "Size - " << robotsNumber.size() << "Capasity - " << robotsNumber.capacity() << std::endl;
-        }
-    }
+	int vectorSize;
+	std::cout << "Enter size you vector - ";
+	std::cin >> vectorSize;
+	std::vector<int> robotsNumber;
+
+	int robotNumber = 0;
+	while (robotNumber != -1)
+	{
+		std::cout << "Enter robot number - ";
+		std::cin >> robotNumber;
+		robotsNumber.push_back(robotNumber);
+		if ((robotsNumber.capacity() - robotsNumber.size()) < 2)
+		{
+			std::cout << "Size - " << robotsNumber.size() << "Capasity - " << robotsNumber.capacity() << std::endl;
+		}
+	}
 }
