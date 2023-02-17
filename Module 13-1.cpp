@@ -46,11 +46,11 @@ int main()
 	std::cout << "Input number to delete: ";
 	int deleteValue = 0;
 	std::cin >> deleteValue;
-	for (int i = 0; i < userVector.size(); ++i)
+	for (uint32_t i = 0; i < userVector.size(); ++i)
 	{
 		if (userVector[i] == deleteValue) {
 			//при помощи обмена перемещаем элемент в конец вектора
-			for (int j = i; j < userVector.size() - 1; ++j) {
+			for (std::size_t j = i; j < userVector.size() - 1; ++j) {
 				std::swap(userVector[j], userVector[j + 1]);
 			}
 			userVector.pop_back();
